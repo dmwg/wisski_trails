@@ -1,0 +1,11 @@
+services:
+  wisski_trails.service:
+    class: Drupal\wisski_trails\Service\WisskiTrailsService
+    arguments:
+      - '@config.factory'
+      - '@current_route_match'
+      - '@logger.channel.wisski_trails'
+
+  logger.channel.wisski_trails:
+    parent: logger.channel_base
+    arguments: ['wisski_trails']

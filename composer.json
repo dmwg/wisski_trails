@@ -17,16 +17,16 @@
     "source": "https://github.com/dmwg/wisski_trails.git"
   },
   "require": {
-    "php": ">=8.2",
+    "php": ">=8.3",
     "drupal/core": "^10.3"
   },
   "require-dev": {
+    "drupal/coder": "^8.3",
     "ergebnis/composer-normalize": "^2.0",
     "mglaman/phpstan-drupal": "^2.0",
     "phpstan/extension-installer": "^1.4",
     "phpstan/phpstan": "^2.0",
     "phpstan/phpstan-deprecation-rules": "^2.0",
-    "drupal/coder": "^8.3",
     "phpunit/phpunit": "^9"
   },
   "repositories": [
@@ -38,6 +38,25 @@
       ]
     }
   ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "Drupal\\wisski_trails\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Drupal\\Tests\\wisski_trails\\": "tests/src/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "ergebnis/composer-normalize": true,
+      "phpstan/extension-installer": true
+    }
+  },
   "scripts": {
     "codingstyle": [
       "@composer install",
@@ -68,27 +87,17 @@
     "test-coverage": "Run unit tests with coverage reports"
   },
   "scripts-aliases": {
-    "codingstyle": ["cs", "style"],
-    "codingstyle-fix": ["fix", "csfix", "stylefix"],
-    "phpstan": ["stan"]
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "autoload": {
-    "psr-4": {
-      "Drupal\\wisski_trails\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Drupal\\Tests\\wisski_trails\\": "tests/src/"
-    }
-  },
-  "config": {
-    "allow-plugins": {
-      "ergebnis/composer-normalize": true,
-      "phpstan/extension-installer": true,
-      "dealerdirect/phpcodesniffer-composer-installer": true
-    }
+    "codingstyle": [
+      "cs",
+      "style"
+    ],
+    "codingstyle-fix": [
+      "fix",
+      "csfix",
+      "stylefix"
+    ],
+    "phpstan": [
+      "stan"
+    ]
   }
 }

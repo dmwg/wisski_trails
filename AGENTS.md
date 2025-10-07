@@ -31,10 +31,20 @@ composer phpstan
 composer normalize
 ```
 
+### Testing
+
+```bash
+# Run unit tests
+composer test
+
+# Run tests with coverage report (requires Xdebug or PCOV)
+composer test-coverage
+```
+
 ### All Quality Checks
 Run these commands to ensure code quality before committing:
 ```bash
-composer codingstyle-fix && composer codingstyle && composer phpstan
+composer codingstyle-fix && composer codingstyle && composer phpstan && composer test
 ```
 
 ## Code Style & Conventions
@@ -42,7 +52,7 @@ composer codingstyle-fix && composer codingstyle && composer phpstan
 - **Standard**: Drupal coding standards
 - **PHP Version**: >= 8.2
 - **Drupal Version**: ^10.3
-- **Namespace**: `Drupal\WisskiTrails\`
+- **Namespace**: `Drupal\wisski_trails\`
 - **Source Directory**: `src/`
 - **PHPStan Level**: 5
 

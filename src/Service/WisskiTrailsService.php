@@ -42,6 +42,8 @@ class WisskiTrailsService {
    *   The current route match.
    * @param \Psr\Log\LoggerInterface $logger
    *   The logger.
+   *
+   * @codeCoverageIgnore
    */
   public function __construct(ConfigFactoryInterface $config_factory, RouteMatchInterface $route_match, LoggerInterface $logger) {
     $this->configFactory = $config_factory;
@@ -55,10 +57,9 @@ class WisskiTrailsService {
    * @return string|null
    *   The entity ID or NULL if not found.
    */
-  public function getCurrentEntityId() {
+  public function getCurrentEntityId(): ?string {
     $entity = $this->getEntityFromRoute();
     if ($entity) {
-      $this->logger->error("TRAILS: entity ID", ['entity_id' => $entity->id()]);
       return $entity->id();
     }
 
@@ -73,7 +74,6 @@ class WisskiTrailsService {
    *   The entity or NULL if not found.
    */
   protected function getEntityFromRoute(): ?EntityInterface {
-    $route_name = $this->routeMatch->getRouteName();
     foreach ($this->routeMatch->getParameters() as $parameter) {
       if ($parameter instanceof EntityInterface) {
         return $parameter;
@@ -91,7 +91,7 @@ class WisskiTrailsService {
    * @return string|null
    *   The iframe URL or NULL if base_url is not configured.
    */
-  public function buildIframeUrl($entity_id) {
+  public function buildIframeUrl($entity_id): ?string {
     $config = $this->configFactory->get('wisski_trails.settings');
     $base_url = $config->get('base_url');
 
@@ -109,7 +109,7 @@ class WisskiTrailsService {
    * @return bool
    *   TRUE if the block should be displayed, FALSE otherwise.
    */
-  public function shouldDisplay() {
+  public function shouldDisplay(): bool {
     $entity_id = $this->getCurrentEntityId();
     $config = $this->configFactory->get('wisski_trails.settings');
     $base_url = $config->get('base_url');

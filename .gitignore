@@ -66,3 +66,7 @@
 /drush
 /drupal.phar
 /drupal
+
+# Ignore test coverage and cache files
+/coverage
+.phpunit.result.cache

@@ -26,7 +26,8 @@
     "phpstan/extension-installer": "^1.4",
     "phpstan/phpstan": "^2.0",
     "phpstan/phpstan-deprecation-rules": "^2.0",
-    "drupal/coder": "^8.3"
+    "drupal/coder": "^8.3",
+    "phpunit/phpunit": "^9"
   },
   "repositories": [
     {
@@ -40,21 +41,31 @@
   "scripts": {
     "codingstyle": [
       "@composer install",
-      "vendor/bin/phpcs -v --colors --no-cache -ps -w --standard=Drupal src"
+      "vendor/bin/phpcs --extensions=php,inc/php,module/php,js,css -v --colors --no-cache -ps -w --standard=Drupal src ./wisski_trails.module"
     ],
     "codingstyle-fix": [
       "@composer install",
-      "vendor/bin/phpcbf -v -w -p --standard=Drupal src"
+      "vendor/bin/phpcbf --extensions=php,inc/php,module/php,js,css -v -w -p --standard=Drupal src ./wisski_trails.module"
     ],
     "phpstan": [
       "@composer install",
       "./vendor/bin/phpstan analyze --configuration=phpstan.neon -vvv --ansi"
+    ],
+    "test": [
+      "@composer install",
+      "vendor/bin/phpunit"
+    ],
+    "test-coverage": [
+      "@composer install",
+      "vendor/bin/phpunit --coverage-text --coverage-clover coverage/clover.xml --coverage-html coverage/html"
     ]
   },
   "scripts-descriptions": {
     "codingstyle": "Detect violations of coding style with phpcs",
     "codingstyle-fix": "Attempt to auto-fix violations of coding style with phpcbf",
-    "phpstan": "Run phpstan on the codebase, as configured in phpstan.neon"
+    "phpstan": "Run phpstan on the codebase, as configured in phpstan.neon",
+    "test": "Run unit tests with phpunit",
+    "test-coverage": "Run unit tests with coverage reports"
   },
   "scripts-aliases": {
     "codingstyle": ["cs", "style"],
@@ -65,7 +76,12 @@
   "prefer-stable": true,
   "autoload": {
     "psr-4": {
-      "Drupal\\WisskiTrails\\": "src/"
+      "Drupal\\wisski_trails\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Drupal\\Tests\\wisski_trails\\": "tests/src/"
     }
   },
   "config": {

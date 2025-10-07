@@ -9,6 +9,8 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Configure WissKI Trails settings.
+ *
+ * @codeCoverageIgnore This is just a thin wrapper around well-tested Drupal logic.
  */
 class WisskiTrailsConfigForm extends ConfigFormBase {
 

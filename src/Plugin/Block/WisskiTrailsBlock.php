@@ -18,6 +18,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * )
  *
  * @phpstan-consistent-constructor
+ * @codeCoverageIgnore This is just a thin wrapper around well-tested Drupal logic.
  */
 class WisskiTrailsBlock extends BlockBase implements ContainerFactoryPluginInterface {
 

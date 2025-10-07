@@ -1,0 +1,5 @@
+wisski_trails.settings:
+  title: 'WissKI Trails'
+  description: 'Configure WissKI Trails iframe visualization settings.'
+  parent: system.admin_config_system
+  route_name: wisski_trails.settings

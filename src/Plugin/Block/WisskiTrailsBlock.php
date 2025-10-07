@@ -11,7 +11,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Provides a WissKI Trails block.
  *
- * @Block(
+ * @\Drupal\Core\Block\Annotation\Block(
  *   id = "wisski_trails_block",
  *   admin_label = @Translation("WissKI Trails"),
  *   category = @Translation("WissKI")
@@ -63,7 +63,7 @@ class WisskiTrailsBlock extends BlockBase implements ContainerFactoryPluginInter
     $service = $container->get('wisski_trails.service');
     /** @var \Psr\Log\LoggerInterface $logger */
     $logger = $container->get('logger.channel.wisski_trails');
-    
+
     return new static(
       $configuration,
       $plugin_id,

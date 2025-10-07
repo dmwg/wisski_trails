@@ -1,0 +1,7 @@
+wisski_trails.settings:
+  path: '/admin/config/wisski/trails'
+  defaults:
+    _form: '\Drupal\wisski_trails\Form\WisskiTrailsConfigForm'
+    _title: 'WissKI Trails Settings'
+  requirements:
+    _permission: 'administer site configuration'

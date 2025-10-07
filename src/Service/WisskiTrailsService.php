@@ -58,7 +58,7 @@ class WisskiTrailsService {
   public function getCurrentEntityId() {
     $entity = $this->getEntityFromRoute();
     if ($entity) {
-        $this->logger->error("Entity ID:", $entity->id());
+      $this->logger->error("TRAILS: entity ID", ['entity_id' => $entity->id()]);
       return $entity->id();
     }
 
@@ -72,8 +72,7 @@ class WisskiTrailsService {
    * @return \Drupal\Core\Entity\EntityInterface|null
    *   The entity or NULL if not found.
    */
-  protected function getEntityFromRoute(): ?EntityInterface
-  {
+  protected function getEntityFromRoute(): ?EntityInterface {
     $route_name = $this->routeMatch->getRouteName();
     foreach ($this->routeMatch->getParameters() as $parameter) {
       if ($parameter instanceof EntityInterface) {

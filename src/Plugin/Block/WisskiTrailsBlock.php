@@ -95,6 +95,7 @@ class WisskiTrailsBlock extends BlockBase implements ContainerFactoryPluginInter
       '#theme' => 'wisski_trails_iframe',
       '#iframe_url' => $iframe_url,
       '#entity_id' => $entity_id,
+      '#should_display' => $this->wisskiTrailsService->shouldDisplay(),
     ];
   }
 

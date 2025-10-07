@@ -10,4 +10,8 @@
  * @ingroup themeable
  */
 #}
+{% if should_display %}
 <iframe src="{{ iframe_url }}" class="wisski-trails-iframe" data-entity-id="{{ entity_id }}"></iframe>
+{% else %}
+<span style="font-size: 0.9rem;">Error loading the visualisation</span>
+{% endif %}

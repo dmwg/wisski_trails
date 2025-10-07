@@ -44,7 +44,7 @@ jobs:
         run: composer install --prefer-dist --no-progress --no-interaction
       
       - name: Check coding style
-        run: composer codestyle
+        run: composer codingstyle
       
       - name: Run PHPStan
         run: composer phpstan

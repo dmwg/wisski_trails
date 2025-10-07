@@ -1,0 +1,78 @@
+{
+  "name": "dmwg/wisski_trails",
+  "description": "Drupal module that shows a document-graph visualisation in an iframe on the entity detail page.",
+  "license": "GPL-3.0-or-later",
+  "type": "drupal-module",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Oliver Baumann",
+      "email": "oliver.baumann@uni-bayreuth.de",
+      "homepage": "https://www.dmwg.uni-bayreuth.de/en/index.html",
+      "role": "maintainer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/dmwg/wisski_trails/issues",
+    "source": "https://github.com/dmwg/wisski_trails.git"
+  },
+  "require": {
+    "php": ">=8.2",
+    "drupal/core": "^10.3"
+  },
+  "require-dev": {
+    "ergebnis/composer-normalize": "^2.0",
+    "mglaman/phpstan-drupal": "^2.0",
+    "phpstan/extension-installer": "^1.4",
+    "phpstan/phpstan": "^2.0",
+    "phpstan/phpstan-deprecation-rules": "^2.0",
+    "drupal/coder": "^8.3"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8",
+      "exclude": [
+        "mglaman/phpstan-drupal"
+      ]
+    }
+  ],
+  "scripts": {
+    "codingstyle": [
+      "@composer install",
+      "vendor/bin/phpcs -v --colors --no-cache -ps -w --standard=Drupal src"
+    ],
+    "codingstyle-fix": [
+      "@composer install",
+      "vendor/bin/phpcbf -v -w -p --standard=Drupal src"
+    ],
+    "phpstan": [
+      "@composer install",
+      "./vendor/bin/phpstan analyze --configuration=phpstan.neon -vvv --ansi"
+    ]
+  },
+  "scripts-descriptions": {
+    "codingstyle": "Detect violations of coding style with phpcs",
+    "codingstyle-fix": "Attempt to auto-fix violations of coding style with phpcbf",
+    "phpstan": "Run phpstan on the codebase, as configured in phpstan.neon"
+  },
+  "scripts-aliases": {
+    "codingstyle": ["cs", "style"],
+    "codingstyle-fix": ["fix", "csfix", "stylefix"],
+    "phpstan": ["stan"]
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "Drupal\\WisskiTrails\\": "src/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "ergebnis/composer-normalize": true,
+      "phpstan/extension-installer": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
+}

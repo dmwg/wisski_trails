@@ -1,0 +1,7 @@
+name: 'WissKI Trails'
+type: module
+description: 'Show an iframe containing document-graph visualisations on the entity detail page.'
+package: AM Extensions
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:views

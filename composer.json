@@ -68,7 +68,7 @@
     ],
     "phpstan": [
       "@composer install",
-      "./vendor/bin/phpstan analyze --configuration=phpstan.neon -vvv --ansi"
+      "./vendor/bin/phpstan analyze --configuration=phpstan.neon"
     ],
     "test": [
       "@composer install",

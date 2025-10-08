@@ -1,5 +1,5 @@
 wisski_trails.settings:
-  path: '/admin/config/wisski/trails'
+  path: '/admin/config/wisski_trails'
   defaults:
     _form: '\Drupal\wisski_trails\Form\WisskiTrailsConfigForm'
     _title: 'WissKI Trails Settings'

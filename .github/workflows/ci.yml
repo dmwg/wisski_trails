@@ -26,7 +26,7 @@ jobs:
           php-version: ${{ matrix.php-version }}
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, gd
           coverage: xdebug
-          tools: composer:v2, phpstan, cs2pr, phpcs
+          tools: composer:v2, phpstan, cs2pr
 
       - name: Setup problem matchers for PHP
         run: echo "::add-matcher::${{ runner.tool_cache }}/php.json"
@@ -51,7 +51,7 @@ jobs:
         run: composer install --prefer-dist --no-progress --no-interaction
       
       - name: Check coding style
-        run: phpcs --extensions=php,inc/php,module/php -q -v --standard=Drupal --report=checkstyle src | cs2pr
+        run: vendor/bin/phpcs --extensions=php,inc/php,module/php -q -v --standard=Drupal --report=checkstyle src | cs2pr
       
       - name: Run PHPStan
         run: composer phpstan

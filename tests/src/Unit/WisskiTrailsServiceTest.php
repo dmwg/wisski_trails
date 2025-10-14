@@ -141,7 +141,7 @@ class WisskiTrailsServiceTest extends TestCase {
       ->willReturn($config);
 
     $result = $this->service->buildIframeUrl('42');
-    $this->assertEquals('https://example.com/viz/42', $result);
+    $this->assertEquals('https://example.com/viz/42.html', $result);
   }
 
   /**
@@ -162,7 +162,7 @@ class WisskiTrailsServiceTest extends TestCase {
       ->willReturn($config);
 
     $result = $this->service->buildIframeUrl('42');
-    $this->assertEquals('https://example.com/viz/42', $result);
+    $this->assertEquals('https://example.com/viz/42.html', $result);
   }
 
   /**

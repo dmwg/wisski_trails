@@ -3,7 +3,7 @@
   "description": "Drupal module that shows a document-graph visualisation in an iframe on the entity detail page.",
   "license": "GPL-3.0-or-later",
   "type": "drupal-module",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "authors": [
     {
       "name": "Oliver Baumann",

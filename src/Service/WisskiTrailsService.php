@@ -100,7 +100,7 @@ class WisskiTrailsService {
       return NULL;
     }
 
-    return rtrim($base_url, '/') . '/' . $entity_id;
+    return rtrim($base_url, '/') . '/' . $entity_id . '.html';
   }
 
   /**

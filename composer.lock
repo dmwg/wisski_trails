@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "337efc34b8e2db6fc020ee57c1bd31be",
+    "content-hash": "dc7ca4eabf797c1efd949ba43dd74ef0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5206,16 +5206,16 @@
         },
         {
             "name": "mglaman/phpstan-drupal",
-            "version": "2.0.9",
+            "version": "2.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mglaman/phpstan-drupal.git",
-                "reference": "fed292ee0e3cc5b86d6f818585697022f46ade3c"
+                "reference": "2574aacbacede545490017df4387361698b67fef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/fed292ee0e3cc5b86d6f818585697022f46ade3c",
-                "reference": "fed292ee0e3cc5b86d6f818585697022f46ade3c",
+                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/2574aacbacede545490017df4387361698b67fef",
+                "reference": "2574aacbacede545490017df4387361698b67fef",
                 "shasum": ""
             },
             "require": {
@@ -5229,7 +5229,7 @@
             "require-dev": {
                 "behat/mink": "^1.10",
                 "composer/installers": "^1.9 || ^2",
-                "drupal/core-recommended": "^10",
+                "drupal/core-recommended": "^11",
                 "drush/drush": "^11 || ^12 || ^13",
                 "phpstan/extension-installer": "^1.4.3",
                 "phpstan/phpstan-strict-rules": "^2.0",
@@ -5287,7 +5287,7 @@
             "description": "Drupal extension and rules for PHPStan",
             "support": {
                 "issues": "https://github.com/mglaman/phpstan-drupal/issues",
-                "source": "https://github.com/mglaman/phpstan-drupal/tree/2.0.9"
+                "source": "https://github.com/mglaman/phpstan-drupal/tree/2.0.10"
             },
             "funding": [
                 {
@@ -5303,7 +5303,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-08-05T14:22:12+00:00"
+            "time": "2025-10-22T17:33:43+00:00"
         },
         {
             "name": "myclabs/deep-copy",
